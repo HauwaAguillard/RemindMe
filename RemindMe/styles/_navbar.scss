@@ -1,0 +1,69 @@
+.navbar {
+  background-color: $light;
+  height: $nav-height;
+  display: flex;
+  justify-content: space-between;
+  padding: $nav-padding;
+  z-index: $nav-z-index;
+  position: relative;
+
+  &-logo {
+    color: $dark;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: $logo-font-size;
+    margin-left: $margin-left;
+    @extend %align-center;
+  }
+
+  &-bars {
+    opacity: 0;
+
+    @include tablet {
+      color: $dark;
+      opacity: 1;
+      position: absolute;
+      top: $nav-bar-top;
+      right: $nav-bar-right;
+      font-size: $nav-bar-font-size;
+    }
+  }
+
+  &-menu {
+    @extend %align-center;
+    list-style: none;
+    text-align: center;
+    margin-right: $margin-right;
+
+    @include tablet {
+      display: none;
+    }
+
+    &--links {
+      color: $dark;
+      @extend %align-center;
+      justify-content: center;
+      text-decoration: none;
+      padding: 0 1rem;
+
+      &:hover {
+        color: $blue;
+        transition: all 0.3s ease;
+      }
+    }
+
+    #button { 
+      padding: $button-padding-top-bottom $button-padding-right-left;
+      border: none;
+      outline: none;
+      border-radius: $button-border-radius;
+      background: $blue;
+      margin-left: $button-margin-left;
+      color: $light;
+
+      &:hover {
+        background: $blue-2;
+      }
+    }
+  }
+}

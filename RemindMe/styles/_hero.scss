@@ -1,0 +1,107 @@
+.hero {
+  background-color: $light;
+
+  &-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+    height: $height;
+    max-width: $max-width;
+    padding-right: $margin-right;
+    padding-left: $margin-left;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      height: $height-full;
+    }
+
+    &--left {
+      width: $width;
+      line-height: $line-height-small;
+
+      @include tablet {
+        padding: $tablet-padding 0;
+      }
+
+      @include mobile {
+        line-height: $line-height;
+      }
+    }
+
+    &--left h1 {
+      font-size: $h1-font-size;
+      color: $blue;
+
+      @include mobile {
+        font-size: $h1-font-size-small;
+      }
+    }
+
+    &--left h2 {
+      font-size: $h2-font-size;
+      color: $dark;
+
+      @include mobile {
+        font-size: $font-size;
+      }
+    }
+
+    &--left p {
+      font-size: $p-font-size;
+      color: $dark;
+      margin-top: $margin-top;
+
+      @include mobile {
+        font-size: $font-size;
+      }
+    }
+
+    &--btn {
+      font-size: $font-size;
+      background-color: $blue;
+      padding: $cta-button-padding-top-bottom $cta-button-padding-right-left;
+      border: none;
+      border-radius: $cta-button-border-radius;
+      color: $light;
+      margin-top: $cta-button-margin-top;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    &--btn a {
+      position: relative;
+      z-index: 2;
+      color: $light;
+      text-decoration: none;
+    }
+
+    &--btn:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 0;
+      height: $width;
+      background-color: $orangeRed;
+      transition: all 0.3s;
+      border-radius: $cta-button-border-radius;
+    }
+
+    &--btn:hover:after {
+      width: $width;
+    }
+
+    &--right {
+      text-align: right;
+    }
+
+    &--img {
+      height: $width;
+      width: $width;
+    }
+  }
+}
